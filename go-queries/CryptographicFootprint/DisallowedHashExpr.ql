@@ -1,10 +1,11 @@
 /**
- * @name CF - Disallowed Hashing Expression
+ * @name Disallowed Hashing Expression
  * @description Part of a set of checks for cryptographic footprint - this is currently too broad and will likely result in duplicate results - trying to find usage of constants but not showing up
  * @kind problem
  * @precision very-high
  * @id go/cf-disallowed-hashing-expression
  * @tags security
+ *       cryptographic-footprint
  * @security-severity 1.0
  * @problem.severity warning
  */

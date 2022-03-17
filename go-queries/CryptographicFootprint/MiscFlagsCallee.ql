@@ -1,10 +1,11 @@
 /**
- * @name CF - Miscellaneous Crypto Method
+ * @name Miscellaneous Crypto Method
  * @description Part of a set of checks for cryptographic footprint
  * @kind problem
  * @precision very-high
  * @id go/cf-miscellaneous-crypto-method
  * @tags security
+ *       cryptographic-footprint
  * @security-severity 1.0
  * @problem.severity warning
  */

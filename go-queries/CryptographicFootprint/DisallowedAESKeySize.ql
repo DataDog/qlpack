@@ -1,10 +1,11 @@
 /**
- * @name CF - Disallowed AES Key Size
+ * @name Disallowed AES Key Size
  * @description Part of a set of checks for cryptographic footprint
  * @kind problem
  * @precision very-high
  * @id go/cf-disallowed-aes-key-size
  * @tags security
+ *       cryptographic-footprint
  * @security-severity 1.0
  * @problem.severity warning
  */

@@ -1,10 +1,11 @@
 /**
- * @name CF - Approved Encryption Package
+ * @name Approved Encryption Package
  * @description Part of a set of checks for cryptographic footprint
  * @kind problem
  * @precision very-high
  * @id go/cf-approved-encryption-package
  * @tags security
+ *       cryptographic-footprint
  * @security-severity 1.0
  * @problem.severity warning
  */
