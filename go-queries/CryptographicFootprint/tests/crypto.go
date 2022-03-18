@@ -1,4 +1,5 @@
 // Adapted from codeql-go's experimental CWE-327 Weak Key Algorithm examples
+// TODO - turn this test into an class that each type subclasses from since there's stuff we want to test everyone like NOT CRPYTO
 
 package main
 
@@ -11,22 +12,54 @@ import (
 	"crypto/sha1"
 	"crypto/sha256"
 	"crypto/tls"
+	"crypto/rand"
 	"golang.org/x/crypto/bcrypt"
 	"golang.org/x/crypto/hkdf"
 	openssl "github.com/Luzifer/go-openssl/v4"
-	"github.com/spacemonkeygo/openssl"
+	openssl2 "github.com/spacemonkeygo/openssl"
 	"github.com/gosnmp/gosnmp"
 )
 
+type TestObject struct {
+}
+
+func (test TestObject) Aes128(s []byte) {
+}
+
+func (test TestObject) Sha256(s []byte) {
+}
+
+func (test TestObject) Bcrypt(s []byte) {
+}
+
+func (test TestObject) Des(s []byte) {
+}
+
+func (test TestObject) Md5(s []byte) {
+}
+
+func (test TestObject) Hkdf(s []byte) {
+}
+
+func (test TestObject) tls(s []byte) {
+}
+
+func (test TestObject) doingsomething(s ...string) {
+}
+
 func main() {
-	foo := "bar"
+	foo := []byte("bar")
 	var baz gosnmp.SnmpV3AuthProtocol
+	test := TestObject{}
 
     // DETECTED - Approved Encryption Callee
 	test.Aes128(foo)
 
 	// DETECTED - Approved Encryption Package
-	rsa.GenerateKey(foo, 128)
+	rsa.GenerateKey(rand.Reader, 128)
+
+	// NON CRYPTO - This tests that our indicator for false positives works
+	rsa.GenerateKey(rand.Reader, 128)
 
 	// DETECTED - Approved Hash Callee
 	test.Sha256(foo)

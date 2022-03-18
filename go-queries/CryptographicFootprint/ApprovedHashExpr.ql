@@ -13,6 +13,8 @@
 import go
 import CryptoLibraries::AlgorithmNames
 
-from ValueExpr ve
+from ValueExpr ve, Comment comment
 where isApprovedHashingAlgorithm(ve.toString().toUpperCase())
+and comment.getLocation().getStartLine() = ve.getLocation().getStartLine() - 1
+and not comment.getText().regexpMatch(nonCrypto())
 select ve, "Possible use of " + ve.toString()

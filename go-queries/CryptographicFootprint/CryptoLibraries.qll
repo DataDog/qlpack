@@ -7,6 +7,10 @@
 import go
 
 module AlgorithmNames {
+    string nonCrypto() {
+        result = ".*NON CRYPTO.*"
+    }
+
     predicate isApprovedHashingAlgorithm(string name) {
         name =
             [
