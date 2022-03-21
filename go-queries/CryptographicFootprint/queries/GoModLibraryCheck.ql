@@ -11,7 +11,14 @@
  */
 
 import go
+import CryptoLibraries::AlgorithmNames
 
 from GoModRequireLine gm
 where gm.getPath().regexpMatch(".*crypto.*") or gm.getPath().regexpMatch(".*openssl.*")
+and not exists (
+    Comment comment |
+    comment.getLocation().getEndLine() = gm.getLocation().getStartLine() - 1
+    and comment.getFile() = gm.getFile()
+    and comment.getText().regexpMatch(nonCrypto())
+)
 select gm, gm.getPath() + " version " + gm.getVersion()

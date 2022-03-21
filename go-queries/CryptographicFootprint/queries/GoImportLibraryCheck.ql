@@ -11,7 +11,14 @@
  */
 
 import go
+import CryptoLibraries::AlgorithmNames
 
 from ImportSpec i
-where i.getPath().regexpMatch("crypto/.*|.*openssl.*")
+where i.getPath().regexpMatch("(golang.org/x/)?crypto/.*|.*openssl.*")
+and not exists (
+    Comment comment |
+    comment.getLocation().getEndLine() = i.getLocation().getStartLine() - 1
+    and comment.getFile() = i.getFile()
+    and comment.getText().regexpMatch(nonCrypto())
+)
 select i, "Possible crypto import: " + i.getPath()
