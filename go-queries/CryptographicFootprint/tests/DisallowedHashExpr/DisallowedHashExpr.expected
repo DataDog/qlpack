@@ -1,0 +1,2 @@
+| DisallowedHashExprTest.go:9:15:9:17 | MD5 | Possible use of MD5 |
+| DisallowedHashExprTest.go:12:15:12:17 | MD5 | Possible use of MD5 |
