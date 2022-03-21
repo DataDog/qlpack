@@ -13,8 +13,12 @@
 import go
 import CryptoLibraries::AlgorithmNames
 
-from ValueExpr ve, Comment comment
+from ValueExpr ve
 where isDisallowedHashingAlgorithm(ve.toString().toUpperCase())
-and comment.getLocation().getStartLine() = ve.getLocation().getStartLine() - 1
-and not comment.getText().regexpMatch(nonCrypto())
+and not exists (
+    Comment comment |
+    comment.getLocation().getEndLine() = ve.getLocation().getStartLine() - 1
+    and comment.getFile() = ve.getFile()
+    and comment.getText().regexpMatch(nonCrypto())
+)
 select ve, "Possible use of " + ve.toString()

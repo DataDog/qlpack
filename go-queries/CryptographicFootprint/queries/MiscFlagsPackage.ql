@@ -15,4 +15,10 @@ import CryptoLibraries::AlgorithmNames
 
 from DataFlow::CallNode c
 where isMiscellaneousToBeFlagged(c.getTarget().getPackage().getName().toUpperCase())
+and not exists (
+    Comment comment |
+    comment.getLocation().getEndLine() = c.getStartLine() - 1
+    and comment.getFile() = c.getFile()
+    and comment.getText().regexpMatch(nonCrypto())
+)
 select c, "Detected " + c.getTarget().getName() + " from " + c.getTarget().getPackage().getPath()

@@ -13,8 +13,12 @@
 import go
 import CryptoLibraries::AlgorithmNames
 
-from DataFlow::CallNode c, Comment comment
+from DataFlow::CallNode c
 where isDisallowedHashingAlgorithm(c.getTarget().getPackage().getName().toUpperCase())
-and comment.getLocation().getStartLine() = c.getStartLine() - 1
-and not comment.getText().regexpMatch(nonCrypto())
+and not exists (
+    Comment comment |
+    comment.getLocation().getEndLine() = c.getStartLine() - 1
+    and comment.getFile() = c.getFile()
+    and comment.getText().regexpMatch(nonCrypto())
+)
 select c, "Detected " + c.getTarget().getName() + " from " + c.getTarget().getPackage().getPath()
