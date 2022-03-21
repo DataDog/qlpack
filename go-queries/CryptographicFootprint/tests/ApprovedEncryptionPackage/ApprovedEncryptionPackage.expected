@@ -1,1 +1,2 @@
-| ApprovedEncryptionPackageTest.go:10:2:10:34 | call to GenerateKey | Detected GenerateKey from crypto/rsa package scope universe scope |
+| ApprovedEncryptionPackageTest.go:9:2:9:34 | call to GenerateKey | Detected GenerateKey from crypto/rsa package scope universe scope |
+| ApprovedEncryptionPackageTest.go:12:2:12:34 | call to GenerateKey | Detected GenerateKey from crypto/rsa package scope universe scope |

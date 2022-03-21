@@ -6,6 +6,8 @@ import (
 )
 
 func main() {
+	rsa.GenerateKey(rand.Reader, 128)
+
 	// DETECTED - Approved Encryption Package
 	rsa.GenerateKey(rand.Reader, 128)
 

@@ -1,0 +1,2 @@
+| ApprovedHashExprTest.go:9:15:9:20 | SHA256 | Possible use of SHA256 |
+| ApprovedHashExprTest.go:12:15:12:20 | SHA256 | Possible use of SHA256 |

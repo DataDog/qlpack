@@ -10,6 +10,8 @@ func main() {
 	foo := []byte("bar")
 	test := TestObject{}
 
+	test.Sha256(foo)
+
 	// DETECTED - Approved Hash Callee
 	test.Sha256(foo)
 
