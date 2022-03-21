@@ -1,1 +1,2 @@
-| ApprovedEncryptionCalleeTest.go:14:2:14:17 | call to Aes128 | Detected Aes128 from test/ApprovedEncryptionCallee |
+| ApprovedEncryptionCalleeTest.go:18:2:18:17 | call to Aes128 | Detected Aes128 from test/ApprovedEncryptionCallee |
+| ApprovedEncryptionCalleeTest.go:21:2:21:17 | call to Aes128 | Detected Aes128 from test/ApprovedEncryptionCallee |

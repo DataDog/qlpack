@@ -13,8 +13,13 @@
 import go
 import CryptoLibraries::AlgorithmNames
 
-from DataFlow::CallNode c, Comment comment
+from DataFlow::CallNode c
 where isApprovedEncryptionAlgorithm(c.getCalleeName().toUpperCase())
-and comment.getLocation().getStartLine() = c.getStartLine() - 1
-and not comment.getText().regexpMatch(nonCrypto())
-select c, "Detected " + c.getCalleeName() + " from " + c.getTarget().getPackage().getPath()
+and not exists (
+    Comment comment |
+    comment.getLocation().getEndLine() = c.getStartLine() - 1
+    and comment.getFile() = c.getFile()
+    and comment.getText().regexpMatch(nonCrypto())
+)
+select c, "Detected " + c.getCalleeName()
++ " from " + c.getTarget().getPackage().getPath()
