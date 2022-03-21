@@ -8,7 +8,7 @@ import (
 func main() {
 	// DETECTED - Approved Encryption Package
 	rsa.GenerateKey(rand.Reader, 128)
-	
+
 	// NON CRYPTO - NOT DETECTED - This tests that our indicator for false positives works
 	rsa.GenerateKey(rand.Reader, 128)
 
