@@ -1,0 +1,1 @@
+| ApprovedEncryptionPackageTest.go:10:2:10:34 | call to GenerateKey | Detected GenerateKey from crypto/rsa package scope universe scope |

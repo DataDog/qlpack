@@ -17,10 +17,10 @@ func main() {
 	// DETECTED - Approved Encryption Callee
 	test.Aes128(foo)
 
-	// NON CRYPTO - This tests that our indicator for false positives works
+	// NON CRYPTO - NOT DETECTED - This tests that our indicator for false positives works
 	test.Aes128(foo)
 
-	// Not an approved item, shouldn't be caught
+	// NOT DETECTED - Not an approved item, shouldn't be caught
 	test.SomeOtherMethod()
 }
 
