@@ -1,5 +1,5 @@
 /**
- * @name Approved Hashing "Attribute" Check
+ * @name Approved Hashing Method Check
  * @description Part of a set of checks for cryptographic footprint
  * @kind problem
  * @precision very-high
@@ -10,8 +10,8 @@
  * @problem.severity warning
  */
 
-// While we could adapt work from CWE-327, this looks for more general rules and usages there
 // Heavily adapted from existing work in CWE-327 and codeql python libraries
+// This looks for broader, less specific usages
 
 import python
 import CryptoLibraries::AlgorithmNames
@@ -21,4 +21,4 @@ import CryptoLibraries::AlgorithmNames
 
 from Call c
 where isApprovedHashingAlgorithm(c.getASubExpression().(Attribute).getAttr().toUpperCase())
-select c, "Found a usage of " + c.getASubExpression().(Attribute).getAttr()
+select c, "Found a usage of method " + c.getASubExpression().(Attribute).getAttr()
