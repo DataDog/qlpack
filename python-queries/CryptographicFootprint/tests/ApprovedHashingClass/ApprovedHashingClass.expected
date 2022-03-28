@@ -1,0 +1,2 @@
+| ApprovedHashingClassTest.py:2:1:2:13 | Class sha256 | Found declaration of class sha256 |
+| ApprovedHashingClassTest.py:7:1:7:23 | Class stuffsha256stuff | Found declaration of class stuffsha256stuff |

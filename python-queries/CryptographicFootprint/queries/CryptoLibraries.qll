@@ -1,3 +1,5 @@
+import python
+
 module AlgorithmNames {
     predicate isApprovedHashingAlgorithm(string name) {
         name =
@@ -46,4 +48,75 @@ module AlgorithmNames {
                 "HKDF"
             ]
     }
+}
+
+private import AlgorithmNames
+
+// Adapted from CWE-327 CryptoLibraries
+
+private newtype TCrpytographicAlgorithm =
+GoodHashingAlgorithm(string name) {
+    isApprovedHashingAlgorithm(name)
+} or
+GoodEncryptionAlgorithm(string name) {
+    isApprovedEncryptionAlgorithm(name)
+} or
+GoodPasswordHashingAlgorithm(string name) {
+    isApprovedPasswordHashingAlgorithm(name)
+} or
+BadHashingAlgorithm(string name) {
+    isDisallowedHashingAlgorithm(name)
+} or
+BadEncryptionAlgorithm(string name) {
+    isDisallowedEncryptionAlgorithm(name)
+} or
+BadPasswordHashingAlgorithm(string name) {
+    isDisallowedPasswordHashingAlgorithm(name)
+}
+
+abstract class CryptographicAlgorithm extends TCrpytographicAlgorithm {
+  string toString() { result = this.getName() }
+
+  abstract string getName();
+
+  bindingset[name]
+  predicate matchesName(string name) {
+      exists(name.regexpFind(".*" + this.getName() + ".*", _, _))
+  }
+}
+
+class ApprovedHashAlgorithm extends GoodHashingAlgorithm, CryptographicAlgorithm {
+    string name;
+    ApprovedHashAlgorithm() { this = GoodHashingAlgorithm(name) }
+    override string getName() { result = name }
+}
+
+class ApprovedEncryptionAlgorithm extends GoodEncryptionAlgorithm, CryptographicAlgorithm {
+    string name;
+    ApprovedEncryptionAlgorithm() { this = GoodEncryptionAlgorithm(name) }
+    override string getName() { result = name }
+}
+
+class ApprovedPasswordHashAlgorithm extends GoodPasswordHashingAlgorithm, CryptographicAlgorithm {
+    string name;
+    ApprovedPasswordHashAlgorithm() { this = GoodPasswordHashingAlgorithm(name) }
+    override string getName() { result = name }
+}
+
+class DisallowedHashAlgorithm extends BadHashingAlgorithm, CryptographicAlgorithm {
+    string name;
+    DisallowedHashAlgorithm() { this = BadHashingAlgorithm(name) }
+    override string getName() { result = name }
+}
+
+class DisallowedEncryptionAlgorithm extends BadEncryptionAlgorithm, CryptographicAlgorithm {
+    string name;
+    DisallowedEncryptionAlgorithm() { this = BadEncryptionAlgorithm(name) }
+    override string getName() { result = name }
+}
+
+class DisallowedPasswordHashAlgorithm extends BadPasswordHashingAlgorithm, CryptographicAlgorithm {
+    string name;
+    DisallowedPasswordHashAlgorithm() { this = BadPasswordHashingAlgorithm(name) }
+    override string getName() { result = name }
 }
