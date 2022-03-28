@@ -1,9 +1,9 @@
 /**
- * @name Approved Hashing Function check
+ * @name Approved Encryption Function check
  * @description Part of a set of checks for cryptographic footprint
  * @kind problem
  * @precision very-high
- * @id go/cf-approved-hashing-function
+ * @id go/cf-approved-encryption-function
  * @tags security
  *       cryptographic-footprint
  * @security-severity 1.0
@@ -20,5 +20,5 @@ import CryptoLibraries::AlgorithmNames
 // and a check for attributes because somehow method calls off modules are being interpreted as attributes?
 
 from Call c
-where isApprovedHashingAlgorithm(c.getFunc().toString().toUpperCase())
+where isApprovedEncryptionAlgorithm(c.getFunc().toString().toUpperCase())
 select c, "Found a usage of function " + c.getFunc()

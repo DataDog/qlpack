@@ -1,9 +1,9 @@
 /**
- * @name Approved Hashing Class Check
+ * @name Approved Encryption Class Check
  * @description Part of a set of checks for cryptographic footprint
  * @kind problem
  * @precision very-high
- * @id go/cf-approved-hashing-class
+ * @id go/cf-approved-encryption-class
  * @tags security
  *       cryptographic-footprint
  * @security-severity 1.0
@@ -16,9 +16,6 @@
 import python
 import CryptoLibraries
 
-// Here we're using the regex check because unlike methods it's less likely to run into false positives
-// As an example, doing the same in functions quickly yields DSA matching "call_soon_threadsafe" methods
-
-from Class c, ApprovedHashAlgorithm a
+from Class c, ApprovedEncryptionAlgorithm a
 where a.matchesName(c.getName().toUpperCase())
 select c, "Found declaration of class " + c.getName()

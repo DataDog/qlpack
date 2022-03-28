@@ -3,7 +3,7 @@
  * @description Part of a set of checks for cryptographic footprint
  * @kind problem
  * @precision very-high
- * @id go/cf-approved-hashing
+ * @id go/cf-approved-hashing-method
  * @tags security
  *       cryptographic-footprint
  * @security-severity 1.0

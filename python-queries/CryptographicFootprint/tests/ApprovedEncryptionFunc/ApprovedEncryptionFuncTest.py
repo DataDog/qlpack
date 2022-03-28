@@ -1,12 +1,12 @@
-def sha256(self, stuff):
+def rsa(self, stuff):
     return stuff
 
 def blah():
     return foo
 
 # FINDINGS
-bleh = sha256("", "")
-sha256()
+bleh = rsa("", "")
+rsa()
 
 # NOT A FINDING
 blah()
