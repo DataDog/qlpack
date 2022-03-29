@@ -21,4 +21,4 @@ and not exists (
     and comment.getFile() = ve.getFile()
     and comment.getText().regexpMatch(nonCrypto())
 )
-select ve, "Possible use of " + ve.toString()
+select ve, "Detected " + ve.toString() + " from " + ve.getLocation().getFile().getRelativePath()
