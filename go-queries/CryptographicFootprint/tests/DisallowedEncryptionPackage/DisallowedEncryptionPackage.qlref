@@ -1,1 +1,1 @@
-DisallowedEncryptionPackage.ql
+CryptographicFootprint/queries/DisallowedEncryptionPackage.ql

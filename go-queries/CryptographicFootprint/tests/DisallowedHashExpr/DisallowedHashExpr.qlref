@@ -1,1 +1,1 @@
-DisallowedHashExpr.ql
+CryptographicFootprint/queries/DisallowedHashExpr.ql

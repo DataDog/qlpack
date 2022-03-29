@@ -1,1 +1,1 @@
-DisallowedAESKeySize.ql
+CryptographicFootprint/queries/DisallowedAESKeySize.ql

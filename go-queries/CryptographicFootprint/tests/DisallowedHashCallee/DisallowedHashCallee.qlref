@@ -1,1 +1,1 @@
-DisallowedHashCallee.ql
+CryptographicFootprint/queries/DisallowedHashCallee.ql

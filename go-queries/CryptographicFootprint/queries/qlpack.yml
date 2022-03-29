@@ -1,3 +1,0 @@
-name: go-cryptographic-footprint-queries
-version: 0.0.0
-libraryPathDependencies: codeql/go-all
