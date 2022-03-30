@@ -1,5 +1,5 @@
 name: python-cryptographic-footprint-tests
 version: 0.0.0
-libraryPathDependencies: python-cryptographic-footprint-queries
+libraryPathDependencies: codeql/python-queries
 extractor: python
 tests: .
