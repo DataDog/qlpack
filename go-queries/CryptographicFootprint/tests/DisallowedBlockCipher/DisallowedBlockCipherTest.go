@@ -28,11 +28,13 @@ func main() {
 	ecbTruncate := ecb.ECBDecrypter(block)
 	ecbMoreTruncation := ecb.ECB(block)
 
+	//DETECTED - CFB
+	cfbEncrypt := cipher.NewCFBDecrypter(block, iv)
+	cfbDecrypt := cipher.NewCFBEncrypter(block, iv)
+
 	// NOT DETECTED
 	gcm, _ := cipher.NewGCM(block)
 	gcmNonce, _ := cipher.NewGCMWithNonceSize(block, 16)
 	gcmTag, _ := cipher.NewGCMWithTagSize(block, 16)
-	cfbEncrypt := cipher.NewCFBDecrypter(block, iv)
-	cfbDecrypt := cipher.NewCFBEncrypter(block, iv)
 }
 

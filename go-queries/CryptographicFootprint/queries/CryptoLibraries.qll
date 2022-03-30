@@ -63,7 +63,7 @@ module AlgorithmNames {
     predicate isDisallowedBlockCipherMode(string name) {
         name =
             [
-                "ECB", "CBC"
+                "ECB", "CBC", "CFB"
             ]
     }
 
