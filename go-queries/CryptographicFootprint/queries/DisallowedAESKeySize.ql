@@ -31,4 +31,4 @@ class AESKeyTrackingConfiguration extends DataFlow::Configuration {
 
 from AESKeyTrackingConfiguration cfg, DataFlow::PathNode source, DataFlow::PathNode sink
 where cfg.hasFlowPath(source, sink)
-select sink, "The size of this AES key should be at least 16 bytes (128 bits)"
+select sink, "Detected " + sink.toString() + " from " + sink.getFile().getRelativePath() " where the size of this AES key should be at least 16 bytes (128 bits)"

@@ -60,6 +60,13 @@ module AlgorithmNames {
             ]
     }
 
+    predicate isDisallowedBlockCipherMode(string name) {
+        name =
+            [
+                "ECB", "CBC"
+            ]
+    }
+
     /**
      * Miscellaneous objects that may raise a flag
      */
@@ -69,4 +76,31 @@ module AlgorithmNames {
                 "NACL", "SSH", "RAND", "RANDOM", "TLS", "SUBTLE", "X509"
             ]
     }
+}
+
+private import AlgorithmNames
+
+// Adapted from CWE-327 CryptoLibraries
+
+private newtype TCrpytographicAlgorithm =
+BadBlockCipherMode(string name) {
+    isDisallowedBlockCipherMode(name)
+}
+
+
+abstract class CryptographicAlgorithm extends TCrpytographicAlgorithm {
+  string toString() { result = this.getName() }
+
+  abstract string getName();
+
+  bindingset[name]
+  predicate matchesName(string name) {
+      exists(name.regexpFind(".*" + this.getName() + ".*", _, _))
+  }
+}
+
+class DisallowedBlockCipherMode extends BadBlockCipherMode, CryptographicAlgorithm {
+    string name;
+    DisallowedBlockCipherMode() { this = BadBlockCipherMode(name) }
+    override string getName() { result = name }
 }
