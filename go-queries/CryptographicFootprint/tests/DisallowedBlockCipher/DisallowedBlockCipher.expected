@@ -1,0 +1,8 @@
+| DisallowedBlockCipherTest.go:22:16:22:48 | call to NewCBCDecrypter | Detected NewCBCDecrypter from crypto/cipher is a disallowed block cipher |
+| DisallowedBlockCipherTest.go:23:16:23:48 | call to NewCBCEncrypter | Detected NewCBCEncrypter from crypto/cipher is a disallowed block cipher |
+| DisallowedBlockCipherTest.go:26:16:26:41 | call to NewECBEncrypter | Detected NewECBEncrypter from test/DisallowedBlockCipher is a disallowed block cipher |
+| DisallowedBlockCipherTest.go:27:16:27:41 | call to NewECBDecrypter | Detected NewECBDecrypter from test/DisallowedBlockCipher is a disallowed block cipher |
+| DisallowedBlockCipherTest.go:28:17:28:39 | call to ECBDecrypter | Detected ECBDecrypter from test/DisallowedBlockCipher is a disallowed block cipher |
+| DisallowedBlockCipherTest.go:29:23:29:36 | call to ECB | Detected ECB from test/DisallowedBlockCipher is a disallowed block cipher |
+| DisallowedBlockCipherTest.go:32:16:32:48 | call to NewCFBDecrypter | Detected NewCFBDecrypter from crypto/cipher is a disallowed block cipher |
+| DisallowedBlockCipherTest.go:33:16:33:48 | call to NewCFBEncrypter | Detected NewCFBEncrypter from crypto/cipher is a disallowed block cipher |

@@ -1,0 +1,2 @@
+| MiscFlagsPackageTest.go:11:2:11:26 | call to X509KeyPair | Detected X509KeyPair from crypto/tls |
+| MiscFlagsPackageTest.go:14:2:14:26 | call to X509KeyPair | Detected X509KeyPair from crypto/tls |

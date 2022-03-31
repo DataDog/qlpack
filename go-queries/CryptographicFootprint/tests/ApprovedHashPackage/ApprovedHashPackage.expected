@@ -1,0 +1,2 @@
+| ApprovedHashPackageTest.go:11:2:11:19 | call to Sum256 | Detected Sum256 from crypto/sha256 |
+| ApprovedHashPackageTest.go:14:2:14:19 | call to Sum256 | Detected Sum256 from crypto/sha256 |

@@ -1,0 +1,5 @@
+name: go-cryptographic-footprint-tests
+version: 0.0.0
+libraryPathDependencies: codeql/go-queries
+extractor: go
+tests: .

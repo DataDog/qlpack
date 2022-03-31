@@ -1,0 +1,2 @@
+| ApprovedEncryptionFuncTest.py:8:8:8:18 | rsa() | Found a usage of function rsa |
+| ApprovedEncryptionFuncTest.py:9:1:9:5 | rsa() | Found a usage of function rsa |

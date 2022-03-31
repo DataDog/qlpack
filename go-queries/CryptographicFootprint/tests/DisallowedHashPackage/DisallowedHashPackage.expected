@@ -1,0 +1,2 @@
+| DisallowedHashPackageTest.go:11:2:11:13 | call to Sum | Detected Sum from crypto/md5 |
+| DisallowedHashPackageTest.go:14:2:14:13 | call to Sum | Detected Sum from crypto/md5 |
