@@ -10,3 +10,5 @@
 | GoImportLibraryCheckTest.go:16:2:16:27 | import specifier | Possible crypto import: golang.org/x/crypto/hkdf |
 | GoImportLibraryCheckTest.go:17:2:17:43 | import specifier | Possible crypto import: github.com/Luzifer/go-openssl/v4 |
 | GoImportLibraryCheckTest.go:18:2:18:44 | import specifier | Possible crypto import: github.com/spacemonkeygo/openssl |
+| GoImportLibraryCheckTest.go:19:2:19:23 | import specifier | Possible crypto import: go.dedis.ch/kyber/v3 |
+| GoImportLibraryCheckTest.go:20:2:20:39 | import specifier | Possible crypto import: github.com/coinbase/kryptology@1.6.0 |

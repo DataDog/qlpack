@@ -1,2 +1,4 @@
 | ../go.mod:6:2:6:41 | go.mod require line | github.com/Luzifer/go-openssl/v4 version v4.1.0 |
-| ../go.mod:11:2:11:56 | go.mod require line | golang.org/x/crypto version v0.0.0-20211117183948-ae814b36b871 |
+| ../go.mod:7:2:7:39 | go.mod require line | github.com/coinbase/kryptology version v1.6.0 |
+| ../go.mod:11:2:11:30 | go.mod require line | go.dedis.ch/kyber/v3 version v3.0.13 |
+| ../go.mod:13:2:13:56 | go.mod require line | golang.org/x/crypto version v0.0.0-20211117183948-ae814b36b871 |

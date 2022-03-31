@@ -14,7 +14,7 @@ import go
 import CryptoLibraries::AlgorithmNames
 
 from ImportSpec i
-where i.getPath().regexpMatch("(golang.org/x/)?crypto/.*|.*openssl.*")
+where i.getPath().regexpMatch("(golang.org/x/)?crypto/.*|.*openssl.*|.*kyber.*|.*kryptology.*")
 and not exists (
     Comment comment |
     comment.getLocation().getEndLine() = i.getLocation().getStartLine() - 1
