@@ -1,0 +1,2 @@
+| ApprovedHashCalleeTest.go:13:2:13:17 | call to Sha256 | Detected Sha256 from test/ApprovedHashCallee |
+| ApprovedHashCalleeTest.go:16:2:16:17 | call to Sha256 | Detected Sha256 from test/ApprovedHashCallee |

@@ -1,0 +1,3 @@
+| ApprovedHashingAttrTest.py:12:1:12:16 | Attribute() | Found a usage of method sha256 |
+| ApprovedHashingAttrTest.py:13:1:13:19 | Attribute() | Found a usage of method sha256 |
+| ApprovedHashingAttrTest.py:14:8:14:30 | Attribute() | Found a usage of method sha256 |

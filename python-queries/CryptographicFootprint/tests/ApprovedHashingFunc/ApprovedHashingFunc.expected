@@ -1,0 +1,2 @@
+| ApprovedHashingFuncTest.py:8:8:8:21 | sha256() | Found a usage of function sha256 |
+| ApprovedHashingFuncTest.py:9:1:9:8 | sha256() | Found a usage of function sha256 |

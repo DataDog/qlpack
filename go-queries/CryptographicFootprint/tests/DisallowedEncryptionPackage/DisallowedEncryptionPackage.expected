@@ -1,0 +1,2 @@
+| DisallowedEncryptionPackageTest.go:9:2:9:19 | call to NewCipher | Detected NewCipher from crypto/des |
+| DisallowedEncryptionPackageTest.go:12:2:12:19 | call to NewCipher | Detected NewCipher from crypto/des |
