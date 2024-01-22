@@ -49,14 +49,14 @@ module AlgorithmNames {
     predicate isApprovedPasswordHashingAlgorithm(string name) {
         name =
             [
-                "ARGON2", "PBKDF2", "BCRYPT", "SCRPYT"
+                "PBKDF2"
             ]
     }
 
     predicate isDisallowedPasswordHashingAlgorithm(string name) {
         name =
             [
-                "HKDF"
+                "HKDF", "ARGON2", "BCRYPT", "SCRYPT"
             ]
     }
 
